@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edição de Dados</title>
+    </head>
+    <body>
+        <h2>Editar Registros</h2>
+        <% data.forEach(function(details) { %>
+            <form action="/edit/<%= details._id %>" method="POST">
+                <input type ="text" value="<%= details.name %>" name="name">
+                <br /><br />
+                <input type ="text" value="<%= details.surname %>" name="surname">
+                <br /><br />
+                <input type ="email" value="<%= details.email %>" name="email">
+                <br /><br />
+                <button type="submit">Salvar Alterações</button>
+                <br /><br />
+                <button type="button" onclick="window.location.href ='/show';">Mostrar usuários</button>
+                
+            </form>
+        <% }) %>
+    </body> 
+</html>

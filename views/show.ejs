@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Exibição de usuarios</title>
+    </head>
+    <body>
+
+        <h2> Registros </h2>
+        <table border ="1">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Sobrenome</td>
+                    <td>Email</td>
+                    <td>Ação</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(function(details){ %>
+                    <tr>
+                        <td><%= details.name %></td>
+                        <td><%= details.surname %></td>
+                        <td><%= details.email %></td>
+                        <td><a href ="/edit/<%= details._id %>">Editar</a> - <a href ="/delete/<%= details._id %>">Deletar</a></td>
+                        <td><a href ="/email/<%= details._id %>">Enviar Email</a></td>
+                    </tr>
+               <% }) %>
+            </tbody>
+        </table>
+        <br />  
+        <button type="button" onclick="window.location.href ='/';">Cadastre-se</button>
+    </body>
+</html>
